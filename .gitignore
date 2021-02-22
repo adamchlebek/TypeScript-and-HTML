@@ -2,3 +2,4 @@
 /.cache
 .vercel
 .DS_Store
+/dist
