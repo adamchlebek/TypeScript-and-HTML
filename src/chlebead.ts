@@ -31,18 +31,21 @@ atomObjects.forEach(atom => {
 div2?.appendChild(list2);
 
 // Part 3
-const tableHeader = document.createElement("thead");
-table3.appendChild(tableHeader);
+const table = document.createElement('table');
+const header = document.createElement('thead');
+const headingRow = document.createElement('tr');
 
 for(let heading of ['Atom', 'Weight'])
 {
     const th = document.createElement("th");
     th.appendChild(document.createTextNode(heading));
-    tableHeader.appendChild(th);
+    headingRow.appendChild(th);
 }
 
+header.appendChild(headingRow);
+table.appendChild(header);
+
 const tableBody = document.createElement("tbody");
-table3.appendChild(tableBody);
 
 for (let atom of atomObjects) {
     const tableRow = document.createElement("tr");
@@ -59,4 +62,5 @@ for (let atom of atomObjects) {
     tableRow.classList.add(atom.weight > 150 ? 'heavy' : 'light');
 }
 
-div3?.appendChild(table3);
+table.appendChild(tableBody);
+div3?.appendChild(table);
